@@ -24,7 +24,7 @@ app.post('/sign-up', (req, res) => {
         id: users.length + 1
     });
 
-    res.status(201).send(users);
+    res.status(201).send("OK");
 });
 
 app.post('/tweets', (req, res) => {
@@ -54,7 +54,7 @@ app.post('/tweets', (req, res) => {
         }
     };
 
-    res.status(201).send(tweets);
+    res.status(201).send("OK");
 });
 
 app.get('/tweets', (req, res) => {
