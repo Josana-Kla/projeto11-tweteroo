@@ -43,11 +43,11 @@ app.post('/tweets', (req, res) => {
     });
 
     for(let i = 0; i < users.length; i++) {
-        if(users[i].username === tweets[i].username) {
+        if(users[i].username === username) {
             console.log("user-signup: " + users[i].username);
-            console.log("user-tweet: " + tweets[i].username);
+            console.log("user-tweet: " + username);
             console.log("---------------------------");
-            tweetero.push({id: tweetero.length + 1, username: tweets[i].username, avatar: users[i].avatar, tweet: tweet});
+            tweetero.push({id: tweetero.length + 1, username: username, avatar: users[i].avatar, tweet: tweet});
         } else {
             console.log("user-signup: " + users[i].username);
             console.log("user-tweet: " + tweets[i].username);
