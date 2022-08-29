@@ -12,8 +12,9 @@ const tweetero = [];
 
 app.post('/sign-up', (req, res) => {
     const { username, avatar } = req.body;
+    const includeImage = avatar.includes('.jpg' || '.jpeg' || '.png' || '.gif');
 
-    if(!username || !avatar || typeof(username) !== 'string' || typeof(avatar) !== 'string') {
+    if(!username || !avatar || !includeImage || typeof(username) !== 'string' || typeof(avatar) !== 'string') {
         res.status(400).send("Todos os campos são obrigatórios!");
         return;
     }
@@ -58,7 +59,7 @@ app.post('/tweets', (req, res) => {
 });
 
 app.get('/tweets', (req, res) => {
-    const getTenTweetero = tweetero.slice(-10);
+    const getTenTweetero = tweetero.slice(-10).reverse();
 
     res.status(200).send(getTenTweetero);
 });
