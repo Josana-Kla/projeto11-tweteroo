@@ -47,7 +47,7 @@ app.post('/tweets', (req, res) => {
             console.log("user-signup: " + users[i].username);
             console.log("user-tweet: " + tweets[i].username);
             console.log("---------------------------");
-            tweetero.push({username: tweets[i].username, avatar: users[i].avatar, tweet: tweet});
+            tweetero.push({id: tweetero.length + 1, username: tweets[i].username, avatar: users[i].avatar, tweet: tweet});
         } else {
             console.log("user-signup: " + users[i].username);
             console.log("user-tweet: " + tweets[i].username);
