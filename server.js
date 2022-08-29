@@ -58,7 +58,7 @@ app.post('/tweets', (req, res) => {
 });
 
 app.get('/tweets', (req, res) => {
-    const getTenTweetero = tweetero.slice(0, 10);
+    const getTenTweetero = tweetero.slice(-10);
 
     res.status(200).send(getTenTweetero);
 });
